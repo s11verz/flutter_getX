@@ -6,6 +6,15 @@ import 'package:provider/provider.dart';
 class WithProvider extends StatelessWidget {
   const WithProvider({Key? key}) : super(key: key);
 
+  Widget _button(context){
+    return RaisedButton(
+        child: Text("+",style: TextStyle(fontSize: 30),),
+        onPressed: (){
+          Provider.of(context)<CountControllerWithProvider>(context, listen:false).increase();
+        }
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -22,15 +31,7 @@ class WithProvider extends StatelessWidget {
               style: TextStyle(fontSize: 50),
             );
           }),
-          RaisedButton(
-              child: Text(
-                "+",
-                style: TextStyle(fontSize: 30),
-              ),
-              onPressed: () {
-                Provider.of(context)<CountControllerWithProvider>(context, listen:false).increase();
-              }
-              )
+          _button(context),
         ],
       ),
     );
