@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/src/pages/normal/first.dart';
+import 'package:flutter_getx/src/pages/simple_state_manage_page.dart';
 import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
@@ -40,6 +41,12 @@ class Home extends StatelessWidget {
                 Get.toNamed("/user/123?name=은지&age=26");
               },
               child: Text('동적 url'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Get.to(SimpleStateManagePage());
+              },
+              child: Text('단순상태관리'),
             )
           ],
         ),
