@@ -22,6 +22,24 @@ class Home extends StatelessWidget {
                 Get.to(FirstPage());
               },
               child: Text('Normal Route'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Get.toNamed("/first");
+              },
+              child: Text('Named Route'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Get.toNamed("/next", arguments: "silver");
+              },
+              child: Text('Arguments 전달'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Get.toNamed("/user/123?name=은지&age=26");
+              },
+              child: Text('동적 url'),
             )
           ],
         ),
@@ -29,3 +47,9 @@ class Home extends StatelessWidget {
     );
   }
 }
+
+// class User{
+//   String? name="silver";
+//   int? age=26;
+//   User({this.name, this.age});
+// }
