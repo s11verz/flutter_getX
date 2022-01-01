@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/src/pages/normal/first.dart';
+import 'package:flutter_getx/src/pages/reactive_state_manage_page.dart';
 import 'package:flutter_getx/src/pages/simple_state_manage_page.dart';
 import 'package:get/get.dart';
 
@@ -47,6 +48,12 @@ class Home extends StatelessWidget {
                 Get.to(SimpleStateManagePage());
               },
               child: Text('단순상태관리'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Get.to(ReactiveStateManagePage());
+              },
+              child: Text('반응형상태관리'),
             )
           ],
         ),
