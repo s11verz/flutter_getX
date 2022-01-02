@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:flutter_getx/src/binding/binding_page.dart';
+import 'package:flutter_getx/src/controller/count_controller_with_getx.dart';
 import 'package:flutter_getx/src/home.dart';
+import 'package:flutter_getx/src/pages/binding.dart';
 import 'package:flutter_getx/src/pages/named/first.dart';
 import 'package:flutter_getx/src/pages/named/second.dart';
 import 'package:flutter_getx/src/pages/next.dart';
@@ -28,7 +31,10 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/first", page: () => FirstNamedPage()),
         GetPage(name: "/second", page: () => SecondNamedPage()),
         GetPage(name: "/next", page: () => NextPage()),
-        GetPage(name: "/user/:uid", page: () => UserPage())
+        GetPage(name: "/user/:uid", page: () => UserPage()),
+        GetPage(name: "/binding", page: () => BindingPage(),
+            binding: BindingPageBinding()
+        )
       ],
     );
   }

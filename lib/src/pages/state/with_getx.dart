@@ -9,14 +9,14 @@ class WithGetX extends StatelessWidget {
   CountControllerWithGetX _controllerWithGetX =
       Get.put(CountControllerWithGetX());
 
-  Widget _button(String id) {
+  Widget _button() {
     return RaisedButton(
         child: Text(
           "+",
           style: TextStyle(fontSize: 30),
         ),
         onPressed: () {
-          _controllerWithGetX.increase(id);
+          _controllerWithGetX.increase();
         });
   }
 
@@ -39,7 +39,7 @@ class WithGetX extends StatelessWidget {
             },
           ),
           GetBuilder<CountControllerWithGetX>(
-            id: "second",
+
             builder: (controller) {
               return Text(
                 "${controller.count}",
@@ -47,8 +47,8 @@ class WithGetX extends StatelessWidget {
               );
             },
           ),
-          _button("first"),
-          _button("second"),
+          _button(),
+          _button(),
         ],
       ),
     );
